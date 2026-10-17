@@ -4,7 +4,7 @@
 
 ## Mission
 
-To enhance bike security for students using technologies to protect their personal bikes from theft.
+To enhance bicycle security and provide students with greater peace of mind through accessible technology.
 
 ## Team
 
@@ -20,8 +20,6 @@ To enhance bike security for students using technologies to protect their person
 
 ## Problem Statement
 
-University students frequently rely on bicycles and electric bikes to commute to campus and travel between distant buildings to attend class. Because these items are repeatedly parked in high-traffic, outdoor areas on campus, they face continuous exposure to theft and vandalism.
+University students frequently rely on bicycles and electric bikes to commute to campus and travel between distant buildings to attend classes. Because these items are repeatedly parked in high-traffic, outdoor areas on campus, they face continuous exposure to theft and vandalism. According to UBC Vancouver's [2024 Campus Security Report](https://bog3.sites.olt.ubc.ca/files/2025/05/14ii_2025.06_Campus-Security-Annual-Report-UBCV.pdf), 96 bicycle theft incidents were reported to Campus Security in 2024, compared with 86 in 2023.
 
-Although traditional bicycle locks provide a physical layer of security, they provide zero real-time alerts when the bicycle is being tampered with. Henceforth, students are unaware if there was any potential tampering attempts on their vehicle. The lack of real-time information can result in the student suffering unexpected financial loss, disruption in daily transportation and anxiety when leaving personal transit items unattended.
-
-Furthermore, students do not have the ability to monitor their personal vehicles all the time because of lectures, laboratory sessions, etc. This in turn results in the need for a method to monitor their bikes while they are away.
+Although conventional bicycle locks provide a physical layer of security, they generally do not provide real-time alerts when a bicycle is being tampered with. Students attending lectures, laboratory sessions, or other campus activities are often unable to monitor their bicycles throughout the day. Consequently, the lack of real-time information can contribute to financial loss, transportation disruptions, and anxiety about leaving personal transportation devices unattended.
