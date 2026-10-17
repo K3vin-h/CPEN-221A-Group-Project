@@ -1,8 +1,6 @@
-<p align="center">
-  <img src="public/teamlogo-white.jpg" alt="BikeGuard Pro logo" width="200">
-</p>
+![BikeGuard Pro logo](public/teamlogo-white.jpg)
 
-<h1 align="center">BikeGuard Pro</h1>
+# BikeGuard Pro
 
 ## Mission
 
@@ -10,12 +8,15 @@ To enhance bike security for students using technologies to protect their person
 
 ## Team
 
-| Role | Name |
-|---|---|
+
+| Role            | Name                  |
+| --------------- | --------------------- |
 | Project Manager | Prince Alehnwi Suh Jr |
-| Designer | _TBD_ |
-| Developer | Andy Fan |
-| Developer | Kevin Huang |
+| Designer        | Kevin Kim             |
+| Designer        | Issac Dario          |
+| Developer       | Andy Fan              |
+| Developer       | Kevin Huang           |
+
 
 ## Problem Statement
 
