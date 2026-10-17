@@ -13,7 +13,7 @@ To enhance bicycle security and provide students with greater peace of mind thro
 | --------------- | --------------------- |
 | Project Manager | Prince Alehnwi Suh Jr |
 | Designer        | Kevin Kim             |
-| Designer        | Issac Dario          |
+| Designer        | Isaac Dario          |
 | Developer       | Andy Fan              |
 | Developer       | Kevin Huang           |
 
