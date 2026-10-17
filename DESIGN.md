@@ -2,47 +2,63 @@
 
 ## Problem Statement
 
-University students frequently rely on bicycles and electric bikes to commute to campus and travel between distant buildings to attend class. Because these items are repeatedly parked in high-traffic, outdoor areas on campus, they face continuous exposure to theft and vandalism.
+University students frequently rely on bicycles and electric bikes to commute to campus and travel between distant buildings to attend classes. Because these items are often parked in high-traffic, outdoor areas on campus, they face continuous exposure to theft and vandalism.
 
-Although traditional bicycle locks provide a physical layer of security, they provide zero real-time alerts when the bicycle is being tampered with. Henceforth, students are unaware if there was any potential tampering attempts on their vehicle. The lack of real-time information can result in the student suffering unexpected financial loss, disruption in daily transportation and anxiety when leaving personal transit items unattended. Furthermore, students do not have the ability to monitor their personal vehicles all the time because of lectures, laboratory sessions, etc. This in turn results in the need for a method to monitor their bikes while they are away.
+Although conventional bicycle locks provide a physical layer of security, they do not provide real-time alerts when the bicycle is being tampered with.  Students attending lectures, laboratory sessions, or other campus activities are often unable to monitor their bicycles throughout the day. Consequently, the lack of real-time information can result in financial loss, transportation disruptions, and anxiety about leaving personal transit items unattended.
 
 ## Solution
 
-BikeGuard Pro is a smart bicycle security monitoring system that combines hardware sensors, embedded hardware, and a web-based application to help students monitor their parked bicycles. The system also maintains local motion detection and alarm functionality when the network connection is unavailable.
+BikeGuard Pro is a bicycle monitoring system that combines hardware sensors, a microcontroller, a backend server, and a web-based application to help students monitor their parked bicycles. 
 
-BikeGuard Pro aims to address the security concerns of university students who rely on bicycles as their daily commute vehicle. Our goal is to develop a security monitoring system that allows students to monitor their bicycles remotely and receive notifications of potential theft attempts.
+The system aims to detect potentially suspicious movement, notify bicycle owners of possible tampering, and maintain a history of security events. It will also maintain local motion detection and alarm functionality when network connection is unavailable.
 
 ### System Components
 
-The system consists of three main components:
+The system consists of four main components:
 
-#### 1. Hardware Monitoring Device
+#### 1. Microcontroller
 
-- An ESP32 microcontroller connected to an accelerometer/gyroscope continuously monitors bicycle movement.
+- An ESP32 microcontroller processes sensor readings to detect potentially suspicious movement.
+- Controls a local buzzer to provide an audible alarm when suspicious activity is detected. 
+- Communicates security events to the backend server over Wi-Fi.
+- Continues monitoring locally when the network connection is unavailable.
 
-#### 2. Backend Server
+#### 2. Sensors
 
-- Communicates with the data from the monitoring device.
-- A motion-detection algorithm analyzes sensor readings to distinguish between minor vibrations and potentially suspicious activity.
+- An accelerometer and gyroscope monitor bicycle movement, vibrations, and changes in orientation.
+- Provide motion data to the microcontroller for detecting potential tampering.
 
-#### 3. Web Dashboard
+#### 3. Backend Server
 
-- Displays the bike's monitoring status and the connection status to the vehicle.
-- Allows the user to enable the monitoring system and configure how notifications are received.
-- If the device is offline, the dashboard displays a connection error message. The device continues monitoring locally.
-- When suspicious movement is detected, a security alert appears on the dashboard that the owner can view.
-- Users can view the security history on the dashboard. Events can be sorted by newest date and time.
+- Receives data transmitted from the microcontroller.
+- Maintains security event history, timestamps, and monitoring information.
+- Communicates with the web dashboard to provide updates, process user commands, and potentially support additional notification functionality.
+
+#### 4. Web Dashboard
+
+- Displays alerts when potentially suspicious movement is detected.
+- Displays the bike's monitoring and connection status.
+- Allows users to remotely arm or disarm the monitoring system
+- Allows users to view historical security events and their timestamps.
+- Indicates when the monitoring device is disconnected or unavailable.
+- May support additional notification options, potentially through a Progressive Web App (PWA), allowing users to receive alerts even when the dashboard is closed, subject to feasibility and device compatibility.
 
 ### Alert Flow
 
 When suspicious movement is detected, the system:
 
 1. Activates a buzzer to provide an immediate audible alarm.
-2. Sends an alert to the backend server through a REST API over Wi-Fi.
+2. Sends an alert to the backend server through a REST API over Wi-Fi when connected.
 3. Records the incident for future reference so that the user can view it in the security history.
 4. Updates the web dashboard so the bicycle owner can view the alert.
 
-If Wi-Fi is unavailable, the device still activates the buzzer. The dashboard and backend cannot receive the monitoring device's data until the connection is restored.
+### Offline Monitoring
+
+If Wi-Fi connectivity is unavailable, the microcontroller continues monitoring bicycle movement, activating the local buzzer when suspicious activity is detected, and temporarily storing security events.
+
+Once connectivity is restored, pending events are transmitted to the backend server and recorded in the security history, allowing users to review activity detected while the device was offline.
+
+While the device is disconnected, the web dashboard indicates that remote monitoring information and commands are unavailable. Real-time notifications cannot be delivered during the interruption.
 
 ## UI Mockups
 
@@ -54,7 +70,7 @@ The main dashboard allows users to monitor their bicycle's security status, arm 
 
 ### Security Alert Screen
 
-This screen notifies users when suspicious movement is detected, displays the time of the incident, and provides an option to disarm the alarm.
+This screen informs users when suspicious movement is detected, displays the time of the incident, and provides an option to disarm the alarm and monitoring system.
 
 ### Event History Screen
 
