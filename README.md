@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/teamlogo.png" alt="BikeGuard Pro logo" width="200">
+  <img src="public/teamlogo-white.jpg" alt="BikeGuard Pro logo" width="200">
 </p>
 
 <h1 align="center">BikeGuard Pro</h1>
